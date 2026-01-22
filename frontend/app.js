@@ -17,6 +17,19 @@ function show(obj, type = 'default') {
     const emoji = filtered.find(([key]) => key === 'emoji')?.[1] || '';
     const message = filtered.find(([key]) => key === 'message')?.[1] || '';
     out.innerHTML = `<div class="response-content"><div class="vibe-emoji">${emoji}</div><div class="vibe-message">${message}</div></div>`;
+  } else if (type === 'smash') {
+    // Special handling for smash counter
+    const smashes = obj.smashes || 0;
+    const message = obj.message || '';
+    out.innerHTML = `
+      <div class="response-content">
+        <div class="smash-icon">💥</div>
+        <div class="smash-message">${message}</div>
+        <div class="smash-counter">
+          <div class="counter-label">Total Smashes</div>
+          <div class="counter-value">${smashes}</div>
+        </div>
+      </div>`;
   } else {
     // Display just the values without JSON structure, skip 'mood' key
     const values = Object.entries(obj)

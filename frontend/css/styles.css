@@ -232,12 +232,71 @@ h2 {
   border: 2px solid #fa709a;
   color: #e63946;
   font-weight: 700;
-  text-transform: uppercase;
 }
 
 .response-box.smash .response-content {
-  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.response-box.smash .smash-icon {
+  font-size: 3.5rem;
+  animation: smashPulse 0.6s ease;
+}
+
+@keyframes smashPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3) rotate(10deg);
+  }
+}
+
+.response-box.smash .smash-message {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.response-box.smash .smash-counter {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 1.5rem 2.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  min-width: 200px;
+}
+
+.response-box.smash .counter-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
   letter-spacing: 2px;
+  color: #fa709a;
+  font-weight: 600;
+}
+
+.response-box.smash .counter-value {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #e63946;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  animation: counterBounce 0.4s ease;
+}
+
+@keyframes counterBounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
 }
 
 .response-box.secret {
