@@ -21,9 +21,9 @@ app.use(express.json());
 
 // Data pools (random picks). You can customize these.
 const fortunes = [
-  "You will debug it in 5 minutes... after 55 minutes of panic.",
+  "You will debug it in 5 minutes after 55 minutes of panic.",
   "Your next commit will be clean and meaningful.",
-  "A bug will disappear when you add one console.log().",
+  "A bug will disappear when you add one console.log.",
   "You passed the vibe check today. 😎",
 ];
 
@@ -34,7 +34,7 @@ const jokes = [
 ];
 
 const vibeMap = {
-  happy: { emoji: "😄", message: "Keep going - you're shipping greatness!" },
+  happy: { emoji: "😄", message: "Keep going you're shipping greatness" },
   tired: { emoji: "🥱", message: "Hydrate. Stretch. Then commit." },
   stressed: { emoji: "😵‍💫", message: "Breathe. One bug at a time." },
 };
@@ -86,7 +86,7 @@ app.get("/api/secret", (req, res) => {
   const code = req.query.code;
 
   if (code === "411L") {
-    return res.json({ message: "🎉 Secret unlocked: +10 luck on your next merge!" });
+    return res.json({ message: "🎉 Secret unlocked: +10 luck on your next merge" });
   }
 
   res.status(403).json({ message: "Nope 😄 Try code=411L" });
